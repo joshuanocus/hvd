@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <p class="reload">reload</p>
+    <div class="content">
+
+        <div class="heart">
+
+            <p class="title">Smile before you click!</p>
+            <p class="message">I know it's hard for the both of us lately<br>
+                but still I am here greeting you<br>Happy Valentine's Day, Ma'am Chin! <br>
+                Continue to strive for your dreams and of course<br> take care of yourself always.<br>
+                Remember that I am only a call or chat away if you need </br>
+                me or even if you don't need me. <br>
+                DON'T TO SMILE! <br>
+                <br>
+                <a class="link" href="flower.html">Click Me!</a></p>
+                
+        </div>
+        <div class="heart anime"></div>
+        <div class="hearts">
+            <div class="heart2"></div>
+            <div class="heart3"></div>
+            <div class="heart4"></div>
+
+        </div>
+    </div>
+    
+
+    <script>
+        var heart = document.querySelector('.heart'),
+            reload = document.querySelector('.reload'),
+            hearts = document.querySelector('.hearts'),
+            allHearts = document.querySelectorAll('.hearts div'),
+            heartAnime = document.querySelector('.heart.anime')
+
+
+        heart.addEventListener('click', animation);
+
+        reload.addEventListener('click', refresh)
+
+
+        function animation() {
+            heart.classList.add("active");
+            reload.setAttribute("style", "opacity: 1; cursor: pointer; pointer-events: auto;  ");
+            heartAnime.style.opacity = "0";
+
+            allHearts.forEach(function (element) {
+                element.classList.add("active");
+            })
+        }
+
+        function refresh() {
+            heart.classList.remove("active");
+            reload.setAttribute("style", "opacity: 0; pointer-events: none;");
+            heartAnime.style.opacity = "1";;
+
+            allHearts.forEach(function (element) {
+                element.classList.remove("active");
+            })
+
+        }
+    </script>
+
+</body>
+
+</html>

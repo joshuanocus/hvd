@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css?family=Gaegu");
+
+.about {
+    position: fixed;
+    z-index: 10;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    transition: all 0.2s ease;
+}
+
+.about .bg_links {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+    backdrop-filter: blur(5px);
+    position: absolute;
+}
+
+.about .logo {
+    width: 40px;
+    height: 40px;
+    z-index: 9;
+    background-image: url(https://rafaelalucas91.github.io/assets/codepen/logo_white.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 7px;
+    opacity: 0.9;
+    transition: all 1s 0.2s ease;
+    bottom: 0;
+    right: 0;
+}
+
+.about .social {
+    opacity: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.about .social .icon {
+    width: 100%;
+    height: 100%;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    display: flex;
+    transition: all 0.2s ease, background-color 0.4s ease;
+    opacity: 0;
+    border-radius: 100%;
+}
+
+.about .social.portfolio {
+    transition: all 0.8s ease;
+}
+
+.about .social.portfolio .icon {
+    background-image: url(https://rafaelalucas91.github.io/assets/codepen/link.svg);
+}
+
+.about .social.dribbble {
+    transition: all 0.3s ease;
+}
+
+.about .social.dribbble .icon {
+    background-image: url(https://rafaelalucas91.github.io/assets/codepen/dribbble.svg);
+}
+
+.about .social.linkedin {
+    transition: all 0.8s ease;
+}
+
+.about .social.linkedin .icon {
+    background-image: url(https://rafaelalucas91.github.io/assets/codepen/linkedin.svg);
+}
+
+.about:hover {
+    width: 105px;
+    height: 105px;
+    transition: all 0.6s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.about:hover .logo {
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+
+.about:hover .social {
+    opacity: 1;
+}
+
+.about:hover .social .icon {
+    opacity: 0.9;
+}
+
+.about:hover .social:hover {
+    background-size: 28px;
+}
+
+.about:hover .social:hover .icon {
+    background-size: 65%;
+    opacity: 1;
+}
+
+.about:hover .social.portfolio {
+    right: 0;
+    bottom: calc(100% - 40px);
+    transition: all 0.3s 0s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.about:hover .social.portfolio .icon:hover {
+    background-color: #698fb7;
+}
+
+.about:hover .social.dribbble {
+    bottom: 45%;
+    right: 45%;
+    transition: all 0.3s 0.15s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.about:hover .social.dribbble .icon:hover {
+    background-color: #ea4c89;
+}
+
+.about:hover .social.linkedin {
+    bottom: 0;
+    right: calc(100% - 40px);
+    transition: all 0.3s 0.25s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.about:hover .social.linkedin .icon:hover {
+    background-color: #0077b5;
+}
+
+body {
+    background-color: #b9e6d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Gaegu", cursive;
+    overflow: hidden;
+}
+
+/* reload button */
+.reload {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    color: #4bb58c;
+    transition: all 0.5s 0.5s ease;
+    width: auto;
+    height: auto;
+    opacity: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+}
+
+.reload:hover {
+    color: white;
+    top: 5px;
+}
+
+.reload:after {
+    background-color: #ef6c57;
+    content: "";
+    width: 0;
+    height: 2px;
+    opacity: 1;
+    border-radius: 30px;
+    position: absolute;
+    bottom: -4px;
+    z-index: -1;
+    transition: width 0.5s 0.5s ease, height 0.5s 0s ease;
+}
+
+.reload:hover:after {
+    transition: width 0.5s 0s ease, height 0.5s 0.5s ease;
+    width: calc(100% + 30px);
+    height: calc(100% + 10px);
+}
+
+/* elements container */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* main heart */
+.heart {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s 0.2s ease;
+    opacity: 1;
+}
+
+.heart:hover {
+    width: 180px;
+    height: 180px;
+    cursor: pointer;
+}
+
+/* background heart - animated */
+.heart.anime {
+    animation: heartbeat 0.8s 0.2s ease infinite alternate;
+    position: absolute;
+    cursor: auto;
+}
+
+@keyframes heartbeat {
+    0% {
+        width: 120px;
+        height: 120px;
+        transition: all 1s 0.2s ease;
+    }
+
+    100% {
+        width: 140px;
+        height: 140px;
+        transition: all 1s 0.2s ease;
+    }
+}
+
+/* elements that compose the heart */
+.heart:before,
+.heart:after {
+    position: absolute;
+    background-color: #ef6c57;
+    content: "";
+    width: 50%;
+    height: 75%;
+}
+
+.heart:before {
+    transform: rotate(-45deg);
+    border-radius: 400px 400px 0px 100px;
+    left: 16%;
+}
+
+.heart:after {
+    transform: rotate(45deg);
+    border-radius: 400px 400px 100px 0px;
+    right: 16%;
+}
+
+/* active state to grow the heart */
+.heart.active {
+    width: 500px;
+    height: 500px;
+    animation: none !important;
+    transition: all 1s 0.2s ease;
+    cursor: auto;
+    transform: rotate(10deg), rotate(0deg);
+    position: absolute;
+}
+
+.heart:hover.active {
+    width: 500px;
+    height: 500px;
+}
+
+/* title - click */
+.heart .title {
+    opacity: 1;
+    color: #f2f2f2;
+    position: absolute;
+    transition: all 0.8s 0.5s ease;
+    z-index: 1;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: -3%;
+    animation: title 3s 1s ease infinite;
+}
+
+@keyframes title {
+
+    0%,
+    25%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    5%,
+    15% {
+        transform: rotate(5deg);
+    }
+
+    10%,
+    20% {
+        transform: rotate(-5deg);
+    }
+}
+
+/* active state that hide the title */
+.heart.active .title {
+    opacity: 0;
+    transition: all 0.8s 0s ease;
+}
+
+/* message */
+.heart .message {
+    opacity: 0;
+    color: #f2f2f2;
+    transition: all 0.2s 0s ease;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: -20%;
+    font-size: 16px;
+    z-index: 1;
+}
+
+/* active state that show the message */
+.heart.active .message {
+    opacity: 1;
+    z-index: 1;
+    margin-top: -10%;
+    transition: all 1s 0.5s ease;
+}
+
+/* floating hearts */
+.hearts {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+.heart2,
+.heart3,
+.heart4 {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    transition: all 1s ease;
+}
+
+.heart2.active {
+    opacity: 1;
+    animation: floatHearts1 2s 0.2s ease;
+}
+
+.heart3.active {
+    opacity: 1;
+    animation: floatHearts2 2s 0.2s ease;
+}
+
+.heart4.active {
+    opacity: 1;
+    animation: floatHearts3 2s 0.2s ease;
+}
+
+@keyframes floatHearts1 {
+    0% {
+        width: 20px;
+        height: 20px;
+        left: 50%;
+        top: 60%;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 30%;
+    }
+
+    100% {
+        width: 50px;
+        height: 50px;
+        left: -20%;
+        top: 20%;
+        transform: rotate(-40deg);
+    }
+}
+
+@keyframes floatHearts2 {
+    0% {
+        width: 20px;
+        height: 20px;
+        right: 50%;
+        top: 60%;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        width: 100px;
+        height: 100px;
+        right: 0%;
+        top: -20%;
+        transform: rotate(40deg);
+    }
+}
+
+@keyframes floatHearts3 {
+    0% {
+        width: 20px;
+        height: 20px;
+        right: 50%;
+        top: 50%;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 100%;
+    }
+
+    100% {
+        width: 80px;
+        height: 80px;
+        right: 0%;
+        top: 110%;
+        transform: rotate(90deg);
+    }
+}
+
+.heart2:before,
+.heart2:after,
+.heart3:before,
+.heart3:after,
+.heart4:before,
+.heart4:after {
+    position: absolute;
+    background-color: #ef6c57;
+    content: "";
+    width: 50%;
+    height: 90%;
+    z-index: 2;
+}
+
+.heart2:before,
+.heart3:before,
+.heart4:before {
+    transform: rotate(-45deg);
+    border-radius: 400px 400px 0px 100px;
+    left: 10%;
+}
+
+.heart2:after,
+.heart3:after,
+.heart4:after {
+    transform: rotate(45deg);
+    border-radius: 400px 400px 100px 0px;
+    right: 10%;
+}
+
+.link{
+    font: bold;
+    color: #f2f2f2;
+}
